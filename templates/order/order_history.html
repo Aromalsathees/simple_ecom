@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Orders
+{% endblock %}
+
+{% block content %}
+
+<div class="orders-container">
+
+    <h2>
+        My Orders
+    </h2>
+
+    {% for order in orders %}
+
+    <div class="order-card">
+
+        <h3>
+            Order #{{ order.id }}
+        </h3>
+
+        <p>
+            Total :
+            ₹{{ order.total_amount }}
+        </p>
+
+        <p>
+            Date :
+            {{ order.created_at }}
+        </p>
+
+    </div>
+
+    {% empty %}
+
+    <h3>
+        No Orders Yet
+    </h3>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Checkout
+{% endblock %}
+
+{% block content %}
+
+<div class="checkout-container">
+
+    <h2>
+        Checkout
+    </h2>
+
+    {% for item in items %}
+
+    <div class="checkout-item">
+
+        <h3>
+            {{ item.product.name }}
+        </h3>
+
+        <p>
+            Quantity :
+            {{ item.quantity }}
+        </p>
+
+        <p>
+            ₹{{ item.subtotal }}
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+    <h2>
+        Total :
+        ₹{{ total }}
+    </h2>
+
+    <a href="{% url 'place_order' %}">
+
+        <button>
+            Place Order
+        </button>
+
+    </a>
+
+</div>
+
+{% endblock %}

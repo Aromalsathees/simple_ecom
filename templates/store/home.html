@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<h2>Categories</h2>
+
+<ul>
+
+    {% for category in categories %}
+
+    <li>
+        <a href="{% url 'category_products' category.id %}">
+            {{ category.name }}
+        </a>
+    </li>
+
+    {% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>Products</h2>
+
+<div class="products">
+
+    {% for product in products %}
+
+    <div class="card">
+
+        <img src="{{ product.image.url }}" alt="">
+
+        <h3>{{ product.name }}</h3>
+
+        <p>
+            {{ product.description|truncatewords:10 }}
+        </p>
+
+        <p class="price">
+            ₹{{ product.price }}
+        </p>
+
+        <a href="{% url 'product_detail' product.id %}">
+            <button>
+                View Product
+            </button>
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

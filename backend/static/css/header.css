@@ -1,0 +1,30 @@
+header{
+    background:#1f2937;
+    padding:15px 40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo h1{
+    color:white;
+    font-size:28px;
+    letter-spacing:1px;
+}
+
+.welcome-user{
+    color:white;
+    font-weight:bold;
+    margin-right:15px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
