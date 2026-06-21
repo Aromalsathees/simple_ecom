@@ -11,12 +11,7 @@ def home(request):
         "products": products,
         "categories": categories
     }
-
-    return render(
-        request,
-        "store/home.html",
-        context
-    )
+    return render(request,"store/home.html",context )
 
 
 
